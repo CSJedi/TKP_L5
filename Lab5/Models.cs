@@ -92,6 +92,7 @@ namespace Lab5.Models
         [MaxLength(50, ErrorMessage = "User`s name length should be less then 50 characters")]
         public string Name { get; set; }
         public string Surname { get; set; }
+        public int Age { get; set; }
         public Basket Basket { get; set; }
         public List<UserRole> UserRoles { get; set; }
     }
