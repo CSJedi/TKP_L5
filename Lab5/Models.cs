@@ -15,7 +15,7 @@ namespace Lab5.Models
         public DbSet<Basket> Baskets { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["L5"].ConnectionString);
+            optionsBuilder.UseSqlServer("Data Source=ARKANSAS\\SQLEXPRESS;Initial Catalog=L5;Integrated Security=SSPI;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -123,6 +123,7 @@ namespace Lab5.Models
         [Required]
         [MaxLength(50, ErrorMessage = "Basket`s name length should be less then 50 characters")]
         public string Name { get; set; }
+        public string Type { get; set; }
         [ForeignKey("User")]
         public int UserId { get; set; }
         public User User { get; set; }
